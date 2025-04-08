@@ -20,14 +20,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      webhooks: [
-        orgs.newRepoWebhook('https://hooks.slack.com/services/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') {
-          content_type: "json",
-          events+: [
-            "*"
-          ],
-        },
-      ],
+      webhooks: [],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           required_approving_review_count: 1,
@@ -223,11 +216,6 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
             "pull_request",
             "push",
             "repository"
-          ],
-        },
-        orgs.newRepoWebhook('https://hooks.slack.com/services/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') {
-          events+: [
-            "*"
           ],
         },
       ],
