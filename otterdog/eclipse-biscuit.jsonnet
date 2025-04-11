@@ -235,6 +235,9 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
         },
       ],
     },
+    orgs.newRepo('biscuit-swift') {
+      allow_merge_commit: true
+    },
     orgs.newRepo('biscuit-wasm') {
       allow_merge_commit: true,
       allow_update_branch: false,
