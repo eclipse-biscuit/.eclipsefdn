@@ -20,14 +20,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
       workflows+: {
         default_workflow_permissions: "write",
       },
-      webhooks: [
-        orgs.newRepoWebhook('https://hooks.slack.com/services/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') {
-          content_type: "json",
-          events+: [
-            "*"
-          ],
-        },
-      ],
+      webhooks: [],
       branch_protection_rules: [
         orgs.newBranchProtectionRule('dev') {
           required_approving_review_count: 1,
@@ -225,11 +218,6 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
             "repository"
           ],
         },
-        orgs.newRepoWebhook('https://hooks.slack.com/services/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') {
-          events+: [
-            "*"
-          ],
-        },
       ],
       secrets: [
         orgs.newRepoSecret('CODECOV_TOKEN') {
@@ -330,5 +318,10 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
         },
       ],
     },
+  ],
+} + {
+  # snippet added due to 'https://github.com/EclipseFdn/otterdog-configs/blob/main/blueprints/add-dot-github-repo.yml'
+  _repositories+:: [
+    orgs.newRepo('.github')
   ],
 }
