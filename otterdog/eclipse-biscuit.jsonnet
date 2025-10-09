@@ -30,7 +30,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('biscuit') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       description: "delegated, decentralized, capabilities based authorization token",
       private_vulnerability_reporting_enabled: true,
       web_commit_signoff_required: false,
@@ -83,7 +83,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('biscuit-component-wasm') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "NPM package distributing biscuit in WebAssembly for web components",
       web_commit_signoff_required: false,
@@ -133,7 +133,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
       allow_merge_commit: true,
       allow_rebase_merge: false,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_security_updates_enabled: true,
       description: "Java implementation of the Biscuit authentication and authorization token",
       homepage: "https://biscuitsec.org/",
@@ -185,7 +185,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('biscuit-lsp') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       has_wiki: false,
       template_repository: "IWANABETHATGUY/tower-lsp-boilerplate",
       web_commit_signoff_required: false,
@@ -212,7 +212,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     },
     orgs.newRepo('biscuit-rust') {
       allow_merge_commit: true,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       description: "Rust implementation of the Biscuit authorization token",
       homepage: "https://www.biscuitsec.org",
       private_vulnerability_reporting_enabled: true,
@@ -253,12 +253,17 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
       ],
     },
     orgs.newRepo('biscuit-swift') {
-      allow_merge_commit: true
+      allow_merge_commit: true,
+      secrets: [
+        orgs.newRepoSecret('NETLIFY_TOKEN') {
+          value: "********",
+        },
+      ],
     },
     orgs.newRepo('biscuit-wasm') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "WebAssembly wrapper for Biscuit authorization tokens",
       web_commit_signoff_required: false,
@@ -270,7 +275,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
       allow_auto_merge: true,
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "web components for Biscuit based Datalog editors and policy execution",
       web_commit_signoff_required: false,
@@ -281,7 +286,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('biscuit-website') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       description: "Biscuit project website",
       web_commit_signoff_required: false,
       workflows+: {
@@ -291,7 +296,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('tree-sitter-biscuit') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "Tree Sitter grammar for biscuit datalog",
       web_commit_signoff_required: false,
@@ -302,7 +307,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('vscode-biscuit') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       web_commit_signoff_required: false,
       workflows+: {
@@ -312,7 +317,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('website') {
       allow_merge_commit: true,
       allow_update_branch: false,
-      delete_branch_on_merge: false,
+      delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "website for Biscuit tokens",
       homepage: "https://www.biscuitsec.org/",
