@@ -83,6 +83,7 @@ orgs.newOrg('technology.biscuit', 'eclipse-biscuit') {
     orgs.newRepo('biscuit-component-wasm') {
       allow_merge_commit: true,
       allow_update_branch: false,
+      archived: true,
       delete_branch_on_merge: true,
       dependabot_alerts_enabled: false,
       description: "NPM package distributing biscuit in WebAssembly for web components",
